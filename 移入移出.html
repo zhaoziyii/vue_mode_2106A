@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style >
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            display: flex;
+            width: 400px;
+            flex-wrap: wrap;
+        }
+        li{
+            width: 25%;
+            height: 100px;
+            background: #111;
+            margin: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+    <script>
+        let li = document.querySelectorAll('li')
+        var alpha = 30
+        for(var i=0;i<li.length;i++){
+            let index = i
+            li[i].onmouseover = function(){
+                li[index].style.filter = 'alpha(opacity:'+alpha+')'
+                li[index].style.opacity = alpha/60
+            }
+            li[i].onmouseout = function(){
+                li[index].style.filter = 'alpha(opacity:'+alpha+')'
+                li[index].style.opacity = alpha
+            }
+        }
+    </script>
+
+</html>

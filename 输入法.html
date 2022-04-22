@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 44px;
+            display: none;
+        }
+        li{
+            border: 1px solid #111;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <button>输入法</button>
+        <ul>
+            <li>简写</li>
+            <li>拼音</li>
+            <li>关闭</li>
+        </ul>
+</body>
+
+<script>
+    let btn = document.querySelector('button')
+    let li = document.querySelectorAll('li')
+    let ul = document.querySelector('ul')
+    btn.addEventListener('click',function(){
+        ul.style.display = "block"
+    })
+    for(var i=0;i<li.length;i++){
+        li[i].onmousemove = function(){
+           this.style.background='red'
+        }
+        li[i].onmouseout = function(){
+            this.style.background = "#fff"
+        }
+        li[2].onclick = function(){
+            ul.style.display = 'none'
+        }
+    }
+</script>
+</html>
