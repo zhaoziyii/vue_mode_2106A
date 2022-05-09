@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="width:200px;height: 50px;background: #ccc;">你好,我好,大家好</div>
+    <button class="header">头部删除</button>
+    <button class="footer">尾部删除</button>
+    <button class="clone">复制</button>
+    <button class="huifu">还原</button>
+
+</body>
+
+
+</html>
+
+<script>
+    let div = document.querySelector('div')
+    let header = document.querySelector('.header')
+    let footer = document.querySelector('.footer')
+    let clone = document.querySelector('.clone')
+    let huifu = document.querySelector('.huifu')
+    let a
+    let b
+    header.onclick = function () {
+        console.log(a)
+        if (this.innerHTML == '头部删除') {
+            this.innerHTML = '头部添加'
+            a = div.innerHTML.split(',')
+            a.shift()
+            div.innerHTML = a
+        } else {
+            a.unshift('你好')
+            div.innerHTML = a
+            this.innerHTML = '头部删除'
+        }
+    }
+    footer.onclick = function () {
+        if (this.innerHTML == '尾部删除') {
+            this.innerHTML = '尾部添加'
+            a = div.innerHTML.split(',')
+            a.pop()
+            div.innerHTML = a
+        } else {
+            a.push('大家好')
+            div.innerHTML = a
+            this.innerHTML = '尾部删除'
+        }
+    }
+    b = div.innerHTML.split(',')
+    clone.onclick = function () {
+        a = div.innerHTML.split(',')
+
+        a.push(div.innerHTML)
+        div.innerHTML = a
+        huifu.onclick = function () {
+            div.innerHTML = b
+        }
+    }
+</script>
